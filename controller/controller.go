@@ -25,12 +25,12 @@ func init() {
 	// Use the SetServerAPIOptions() method to set the version of the Stable API on the client
 	serverAPI := options.ServerAPI(options.ServerAPIVersion1)
 	//Client Options
-	opts := options.Client().ApplyURI("mongodb+srv://bhartiankit692:Atlas@123//@cluster0.z5aoibm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").SetServerAPIOptions(serverAPI)
+	opts := options.Client().ApplyURI("mongodb+srv://bhartiankit692:Atlas%40123%2F%2F@cluster0.z5aoibm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").SetServerAPIOptions(serverAPI)
 
 	//Making Connection
 	client, err := mongo.Connect(context.TODO(), opts)
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 
 	fmt.Println("MongoDB Connection Successfull")
